@@ -28,15 +28,15 @@ public class MessageService {
     public Optional<Message> getMessage(int id){
         return messageRepository.getMessage(id);
     }
-    
-    public Message save (Message message){
-        if (message.getIdMessage() == null){
+
+    public Message save(Message message){
+        if(message.getIdMessage()==null){
             return messageRepository.save(message);
-        } else {
-            Optional<Message> message1 = messageRepository.getMessage(message.getIdMessage());
-            if(message1.isEmpty()){
+        }else{
+            Optional<Message> e= messageRepository.getMessage(message.getIdMessage());
+            if(e.isEmpty()){
                 return messageRepository.save(message);
-            } else {
+            }else{
                 return message;
             }
         }
