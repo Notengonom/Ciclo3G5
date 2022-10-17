@@ -18,7 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Repository
 
 public class ReservationRepository {
-     @Autowired
+    @Autowired
     private ReservationInterface extencionesCrud;
     
     public List<Reservation> getAll(){

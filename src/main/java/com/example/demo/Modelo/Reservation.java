@@ -31,10 +31,10 @@ public class Reservation {
      private String status = "created";
      
     @ManyToOne
-    @JoinColumn(name = "roomId")
+    @JoinColumn(name = "id")
     @JsonIgnoreProperties("reservations")
     private Room room;
-    
+
     @ManyToOne
     @JoinColumn(name = "clientId")
     @JsonIgnoreProperties({"reservations","messages"})
