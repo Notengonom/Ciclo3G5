@@ -28,8 +28,8 @@ public class MessageRepository {
     public Optional<Message> getMessage(int id){
         return extencionesCrud.findById(id);
     }
-    
-    public Message save(Message message){
+
+    public Message save(Message message) {
         return extencionesCrud.save(message);
     }
 }

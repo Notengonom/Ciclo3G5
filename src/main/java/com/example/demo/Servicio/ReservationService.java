@@ -28,15 +28,15 @@ public class ReservationService {
     public Optional<Reservation> getReservation(int id){
         return reservationRepository.getReservation(id);
     }
-    
-    public Reservation save (Reservation reservation){
-        if (reservation.getIdReservation() == null){
+
+    public Reservation save(Reservation reservation){
+        if(reservation.getIdReservation()==null){
             return reservationRepository.save(reservation);
-        } else {
-            Optional<Reservation> reservation1 = reservationRepository.getReservation(reservation.getIdReservation());
-            if(reservation1.isEmpty()){
+        }else{
+            Optional<Reservation> e= reservationRepository.getReservation(reservation.getIdReservation());
+            if(e.isEmpty()){
                 return reservationRepository.save(reservation);
-            } else {
+            }else{
                 return reservation;
             }
         }

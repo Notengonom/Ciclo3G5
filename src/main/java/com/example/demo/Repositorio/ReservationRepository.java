@@ -28,8 +28,8 @@ public class ReservationRepository {
     public Optional<Reservation> getReservation(int id){
         return extencionesCrud.findById(id);
     }
-    
-    public Reservation save(Reservation reservation){
+
+    public Reservation save(Reservation reservation) {
         return extencionesCrud.save(reservation);
     }
 }
